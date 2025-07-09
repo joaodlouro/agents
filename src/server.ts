@@ -17,6 +17,7 @@ app.register(fastifyCors, {
 app.setValidatorCompiler(validatorCompiler);
 app.setSerializerCompiler(serializerCompiler);
 
-app.listen({ port: 3000 }).then(() => {
-  console.log('Server is running');
+app.listen({ port: process.env.Port ? Number(process.env.Port): 3000 }).then(() => {
+ console.log(`Port: ${process.env.Port}`);
+  console.log('Server is running!!!!');
 });
