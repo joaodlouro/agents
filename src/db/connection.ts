@@ -3,6 +3,7 @@ import { env } from "../env.ts";
 
 export const sql = postgres(env.DATABASE_URL);
 
-const result = await sql`it's a 'test' a test`;
+
+const result = await sql`SELECT 1`;
 
 console.log(result);
