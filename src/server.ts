@@ -1,6 +1,5 @@
-import fastify from 'fastify';
 import fastifyCors from '@fastify/cors';
-import {sql} from './db/connection.ts';
+import fastify from 'fastify';
 import { env } from './env.ts';
 
 
@@ -9,6 +8,7 @@ import {
   validatorCompiler,
   type ZodTypeProvider,
 } from 'fastify-type-provider-zod';
+import { getRoomsRoute } from './http/roules/get-rooms.ts';
 
 
 
@@ -25,6 +25,8 @@ app.setSerializerCompiler(serializerCompiler);
 app.get('/health', () => {
   return 'OK';
 });
+
+app.register(getRoomsRoute)
 
 
 app.listen({ port: env.Port });
