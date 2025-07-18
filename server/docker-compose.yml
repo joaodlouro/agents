@@ -6,7 +6,7 @@ services:
     environment:
       POSTGRES_USER: docker
       POSTGRES_PASSWORD: docker
-      POSTGRES_DB: agents
+      POSTGRES_DB: server
 
     ports:
       - "5432:5432"

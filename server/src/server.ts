@@ -24,4 +24,5 @@ app.get('/health', () => {
 
 app.register(getRoomsRoute);
 
+
 app.listen({ port: env.Port });
