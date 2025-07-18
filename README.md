@@ -1,69 +1,74 @@
 🧠 Agents
-Aplicação web moderna que demonstra a integração de agentes inteligentes com uma interface eficiente e bem estruturada.
+A modern web application that integrates intelligent agents through an efficient and well-structured interface.
 
-🚀 Tecnologias Utilizadas
-React 19.1 – Biblioteca para construção de interfaces de usuário
+🚀 Technologies Used
+React 19.1 – Library for building user interfaces
 
-TypeScript 5.8 – Superset do JavaScript com tipagem estática
+TypeScript 5.8 – JavaScript superset with static typing
 
-Vite 7.0 – Ferramenta de build e servidor de desenvolvimento rápido
+Vite 7.0 – Fast build tool and development server
 
-TailwindCSS 4.1 – Framework CSS utility-first
+TailwindCSS 4.1 – Utility-first CSS framework
 
-React Router DOM 7.6 – Roteamento baseado em componentes
+React Router DOM 7.6 – Component-based routing
 
-TanStack React Query 5.8 – Gerenciamento de estado assíncrono e cache de dados
+TanStack React Query 5.8 – Server state management and caching
 
-Radix UI – Componentes acessíveis e sem estilo pré-definido
+Radix UI – Unstyled and accessible component primitives
 
-shadcn/ui – Sistema de componentes acessível e altamente personalizável
+shadcn/ui – Customizable and accessible component system
 
-Lucide React – Biblioteca de ícones de código aberto
+Lucide React – Open-source icon library
 
-📁 Padrões e Arquitetura
-Component-based Architecture – Aplicação construída com foco em componentes reutilizáveis
+📁 Project Architecture & Patterns
+Component-based Architecture – Built using reusable UI components
 
-File-based Routing – Roteamento estruturado por arquivos com React Router
+File-based Routing – Routing structure based on files using React Router
 
-Server State Management – Gerenciamento eficiente de dados remotos com React Query
+Server State Management – Efficient handling of remote data with React Query
 
-Variant-based Components – Componentes com variantes usando class-variance-authority (CVA)
+Variant-based Components – Components with variants powered by class-variance-authority (CVA)
 
-Composition Pattern – Composição de componentes utilizando Radix Slot
+Composition Pattern – Component composition using Radix’s Slot
 
-Path Aliasing – Alias personalizados (@/ aponta para src/)
+Path Aliasing – Custom import paths (@/ points to src/)
 
-⚙️ Como Executar o Projeto
-✅ Pré-requisitos
-Node.js (v18 ou superior)
+⚙️ Getting Started
+✅ Requirements
+Node.js (v18 or higher)
 
-npm ou yarn
+npm or yarn
 
-💾 Instalação
+💾 Installation
 bash
 Copiar
 Editar
-# Clone o repositório
+
+# Clone the repository
+
 git clone <URL>
 
-# Acesse o diretório
+# Navigate into the project
+
 cd agents
 
-# Instale as dependências
+# Install dependencies
+
 npm install
-▶️ Execução
+▶️ Development
 bash
 Copiar
 Editar
 npm run dev
-Acesse a aplicação em: http://localhost:5173
+Visit the app at: http://localhost:5173
 
-📦 Scripts Disponíveis
-npm run dev – Inicia o servidor de desenvolvimento
+📦 Available Scripts
+npm run dev – Starts the development server
 
-npm run build – Gera build de produção
+npm run build – Builds the project for production
 
-npm run preview – Executa o build em modo preview
+npm run preview – Previews the production build
 
 🔌 Backend
-A aplicação consome uma API que deve estar disponível na porta 3000. Certifique-se de que o backend esteja rodando corretamente antes de iniciar o frontend.
+This application consumes an API that must be running on port 3000.
+Make sure the backend is configured and running before starting the frontend.
