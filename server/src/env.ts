@@ -1,11 +1,9 @@
-import { z } from 'zod';
-
+import { z } from 'zod'
 
 const envSchema = z.object({
-  Port: z.coerce.number().default(3000),
- DATABASE_URL: z.string().url().startsWith('postgresql://'),
-});
+  PORT: z.coerce.number().default(3333),
+  DATABASE_URL: z.string().url().startsWith('postgresql://'),
+  GEMINI_API_KEY: z.string(),
+})
 
-export const env= envSchema.parse(process.env);
-
-env.Port
+export const env = envSchema.parse(process.env)

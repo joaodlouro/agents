@@ -1,10 +1,22 @@
-#Variable
-@baseUrl= http://localhost:3000
+# Variable
+@baseUrl = http://localhost:3000
 
-#health check
+# Health check
 GET {{baseUrl}}/health
 
 ###
 
-#Get rooms
-GET {{baseUrl}} /rooms
+# Get rooms
+GET {{baseUrl}}/rooms
+
+### 
+
+# Create room
+POST {{baseUrl}}/rooms
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "sala de teste",
+  "description": "sala teste"
+}
