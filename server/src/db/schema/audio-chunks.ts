@@ -1,4 +1,4 @@
-import { pgTable, text, timestamp, uuid, vector } from 'drizzle-orm/pg-core'
+import { pgTable, text, timestamp, uuid } from 'drizzle-orm/pg-core'
 import { rooms } from './rooms.ts'
 
 export const audioChunks = pgTable('audio_chunks', {
@@ -7,6 +7,6 @@ export const audioChunks = pgTable('audio_chunks', {
     .references(() => rooms.id)
     .notNull(),
   transcription: text().notNull(),
-  embeddings: vector({ dimensions: 768 }).notNull(),
+  embeddings: text().notNull(),
   createdAt: timestamp().defaultNow().notNull(),
 })
