@@ -4,7 +4,6 @@ import { db } from '../../db/connection.ts'
 import { schema } from '../../db/schema/index.ts'
 import { generateEmbeddings, transcribeAudio } from '../../services/gemini.ts'
 
-
 export const uploadAudioRoute: FastifyPluginCallbackZod = (app) => {
   app.post(
     '/rooms/:roomId/audio',

@@ -3,7 +3,7 @@ import type { FastifyPluginCallbackZod } from 'fastify-type-provider-zod'
 import { z } from 'zod/v4'
 import { db } from '../../db/connection.ts'
 import { schema } from '../../db/schema/index.ts'
-import { generateEmbeddings, transcribeAudio, generateAnswer } from '../../services/gemini.ts'
+import { generateAnswer, generateEmbeddings } from '../../services/gemini.ts'
 
 export const createQuestionRoute: FastifyPluginCallbackZod = (app) => {
   app.post(
