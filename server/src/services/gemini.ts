@@ -53,22 +53,19 @@ export async function generateAnswer(
   const context = transcriptions.join('\n\n')
 
   const prompt = `
-    Com base no texto fornecido abaixo como contexto, responda a pergunta de forma clara e precisa em português do Brasil.
-  
-    CONTEXTO:
-    ${context}
+Responda à pergunta abaixo de forma clara, objetiva e educativa em português do Brasil.
 
-    PERGUNTA:
-    ${question}
+Pergunta:
+${question}
 
-    INSTRUÇÕES:
-    - Use apenas informações contidas no contexto enviado;
-    - Se a resposta não for encontrada no contexto, apenas responda que não possui informações suficientes para responder;
-    - Seja objetivo;
-    - Mantenha um tom educativo e profissional;
-    - Cite trechos relevantes do contexto se apropriado;
-    - Se for citar o contexto, utilize o temo "conteúdo da aula";
-  `.trim()
+Contexto adicional (se houver):
+${context}
+
+Instruções:
+- Utilize o contexto se ele for útil;
+- Caso o contexto esteja vazio ou irrelevante, responda com base no seu conhecimento geral;
+- Mantenha um tom profissional e natural;
+`.trim()
 
   const response = await gemini.models.generateContent({
     model,

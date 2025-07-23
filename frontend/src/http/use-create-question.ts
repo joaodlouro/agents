@@ -24,7 +24,6 @@ export function useCreateQuestion(roomId: string) {
       return result
     },
 
-    // Executa no momento que for feita a chamada p/ API
     onMutate({ question }) {
       const questions = queryClient.getQueryData<GetRoomQuestionsResponse>([
         'get-questions',

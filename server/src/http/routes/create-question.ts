@@ -23,7 +23,6 @@ export const createQuestionRoute: FastifyPluginCallbackZod = (app) => {
       const { question } = request.body
 
       const embeddings = await generateEmbeddings(question)
-
       const embeddingsAsString = `[${embeddings.join(',')}]`
 
       const chunks = await db
@@ -44,13 +43,10 @@ export const createQuestionRoute: FastifyPluginCallbackZod = (app) => {
         )
         .limit(3)
 
-      let answer: string | null = null
+      const transcriptions =
+        chunks.length > 0 ? chunks.map((chunk) => chunk.transcription) : ['']
 
-      if (chunks.length > 0) {
-        const transcriptions = chunks.map((chunk) => chunk.transcription)
-
-        answer = await generateAnswer(question, transcriptions)
-      }
+      const answer = await generateAnswer(question, transcriptions)
 
       const result = await db
         .insert(schema.questions)
@@ -60,7 +56,7 @@ export const createQuestionRoute: FastifyPluginCallbackZod = (app) => {
       const insertedQuestion = result[0]
 
       if (!insertedQuestion) {
-        throw new Error('Failed to create new room.')
+        throw new Error('Failed to create new question.')
       }
 
       return reply.status(201).send({
