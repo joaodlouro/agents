@@ -6,7 +6,7 @@ import {
   validatorCompiler,
   type ZodTypeProvider,
 } from 'fastify-type-provider-zod'
-import { env } from './env.ts'
+
 import { createQuestionRoute } from './http/routes/create-question.ts'
 import { createRoomRoute } from './http/routes/create-room.ts'
 import { getRoomQuestions } from './http/routes/get-room-questions.ts'
@@ -34,4 +34,12 @@ app.register(getRoomQuestions)
 app.register(createQuestionRoute)
 app.register(uploadAudioRoute)
 
-app.listen({ port: env.PORT })
+const PORT = Number(process.env.PORT) || 3333
+
+app
+  .listen({ port: PORT, host: '0.0.0.0' })
+  .then(() => console.log(`HTTP server running on port ${PORT}`))
+  .catch((err) => {
+    console.error('Failed to start server:', err)
+    process.exit(1)
+  })
