@@ -9,7 +9,7 @@ export function useCreateQuestion(roomId: string) {
   return useMutation({
     mutationFn: async (data: CreateQuestionRequest) => {
       const response = await fetch(
-        `https://agents-5j9a.vercel.app/rooms/${roomId}/questions`,
+        `http://localhost:3333/rooms/${roomId}/questions`,
         {
           method: 'POST',
           headers: {
@@ -24,6 +24,7 @@ export function useCreateQuestion(roomId: string) {
       return result
     },
 
+    // Executa no momento que for feita a chamada p/ API
     onMutate({ question }) {
       const questions = queryClient.getQueryData<GetRoomQuestionsResponse>([
         'get-questions',

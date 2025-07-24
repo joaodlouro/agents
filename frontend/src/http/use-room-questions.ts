@@ -6,7 +6,7 @@ export function useRoomQuestions(roomId: string) {
     queryKey: ['get-questions', roomId],
     queryFn: async () => {
       const response = await fetch(
-        `https://agents-5j9a.vercel.app/rooms/rooms/${roomId}/questions`
+        `http://localhost:3333/rooms/${roomId}/questions`
       )
       const result: GetRoomQuestionsResponse = await response.json()
 
