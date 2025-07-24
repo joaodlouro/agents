@@ -33,13 +33,3 @@ app.register(createRoomRoute)
 app.register(getRoomQuestions)
 app.register(createQuestionRoute)
 app.register(uploadAudioRoute)
-
-const PORT = Number(process.env.PORT) || 3333
-
-app
-  .listen({ port: PORT, host: '0.0.0.0' })
-  .then(() => console.log(`HTTP server running on port ${PORT}`))
-  .catch((err) => {
-    console.error('Failed to start server:', err)
-    process.exit(1)
-  })
