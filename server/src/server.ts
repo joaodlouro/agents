@@ -24,12 +24,12 @@ app.register(fastifyMultipart)
 app.setSerializerCompiler(serializerCompiler)
 app.setValidatorCompiler(validatorCompiler)
 
-app.get('/health', () => {
-  return 'OK'
-})
+app.get('/health', () => 'OK')
 
 app.register(getRoomsRoute)
 app.register(createRoomRoute)
 app.register(getRoomQuestions)
 app.register(createQuestionRoute)
 app.register(uploadAudioRoute)
+
+export { app }
